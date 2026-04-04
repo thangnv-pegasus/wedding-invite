@@ -130,7 +130,7 @@ export default function GiveMoney() {
         </div>
 
         {/* Center — Arch couple photo */}
-        <div className="shrink-0 p-10 md:p-0">
+        <div className="flex-1 p-10 md:p-0">
           <div className="w-[400px] max-w-full h-auto border-2 border-[#a12f0c] rounded-t-full overflow-hidden shadow-lg">
             <Image
               src={couplePhoto}
