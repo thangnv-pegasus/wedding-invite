@@ -6,14 +6,14 @@ export default function AboutStory() {
   return (
     <div className="bg-[#fbf7f5] relative overflow-hidden py-20">
       {/* LOVE STORY vertical text on the left */}
-      <p className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[45%] text-[110px] font-family-prata text-[#f4dbce] rotate-90 tracking-wider select-none whitespace-nowrap">
+      <p className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[45%] text-6xl md:text-[110px] font-family-prata text-[#f4dbce] rotate-90 tracking-wider select-none whitespace-nowrap">
         LOVE STORY
       </p>
 
       {/* Main content */}
       <section className="max-w-[1320px] w-full mx-auto flex flex-col items-center px-6">
         {/* Title */}
-        <h2 className="font-family-pinyon-script text-7xl text-[#a12f0c] text-center leading-tight mb-6">
+        <h2 className="font-family-pinyon-script text-6xl md:text-7xl text-[#a12f0c] text-center leading-tight mb-6">
           Chuyện chúng mình
         </h2>
 

@@ -102,7 +102,7 @@ export default function PhotoGallery() {
 
   return (
     <div className="py-20 px-4">
-      <h2 className="leading-24 text-7xl mb-10 font-family-pinyon-script text-[#92400e] text-center">
+      <h2 className="leading-24 text-6xl md:text-7xl mb-10 font-family-pinyon-script text-[#92400e] text-center">
         Album ảnh cưới
       </h2>
       {/* Keyframe for fade-in animation */}

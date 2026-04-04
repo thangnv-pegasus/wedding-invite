@@ -4,7 +4,7 @@ import flowerLeft from "@/assets/images/flower-bottom-left-corner.png";
 import flowerRight from "@/assets/images/flower-bottom-right-corner.png";
 
 interface BankCardProps {
-  side: "left" | "right";
+  side: "left" | "right" | "center";
   title: string;
   bankName: string;
   accountOwner: string;
@@ -32,6 +32,28 @@ function BankCard({
     </div>
   );
 
+  const renderSide = (side: string) => {
+    if (side === "left") {
+      return "text-left";
+    }
+    if (side === "right") {
+      return "text-right";
+    }
+
+    return "text-center";
+  };
+
+  const generateFlow = (side: string) => {
+    if (side === "left") {
+      return "flex-row";
+    }
+    if (side === "right") {
+      return "flex-row-reverse";
+    }
+
+    return "justify-center";
+  };
+
   const info = (
     <div
       className={`font-family-prata flex flex-col gap-2 text-base text-[#3d2e28] ${side === "left" ? "text-left" : "text-right"}`}
@@ -43,20 +65,18 @@ function BankCard({
   );
 
   return (
-    <div className="flex flex-col gap-4 max-w-[280px] w-full font-family-prata text-base">
+    <div className="flex flex-col gap-4 max-w-[280px] w-full mx-auto font-family-prata text-base">
       {/* Title */}
       <h3
-        className={`font-normal text-2xl text-[#a12f0c] leading-tight ${
-          side === "left" ? "text-left" : "text-right"
-        }`}
+        className={`font-normal text-2xl text-[#a12f0c] leading-tight ${renderSide(
+          side,
+        )}`}
       >
         {title}
       </h3>
 
       {/* QR + Info row */}
-      <div
-        className={`flex items-center gap-5 ${side === "right" ? "flex-row-reverse" : ""}`}
-      >
+      <div className={`flex items-center gap-5 ${generateFlow(side)}`}>
         {qrImg}
         {info}
       </div>
@@ -94,7 +114,7 @@ export default function GiveMoney() {
       {/* ── Main 3-column layout ── */}
       <div className="relative max-w-330 mx-auto py-12 flex items-end justify-center gap-8">
         {/* Left — Chú rể */}
-        <div className="flex-1 flex justify-end pb-20">
+        <div className="flex-1 justify-end pb-20 hidden md:flex">
           <BankCard
             side="left"
             title="Mừng cưới đến chú rể"
@@ -116,7 +136,7 @@ export default function GiveMoney() {
         </div>
 
         {/* Right — Cô dâu */}
-        <div className="flex-1 flex justify-start pb-20">
+        <div className="flex-1 md:flex hidden justify-start pb-20">
           <BankCard
             side="right"
             title="Mừng cưới đến cô dâu"
@@ -125,6 +145,22 @@ export default function GiveMoney() {
             accountNumber="987654321"
           />
         </div>
+      </div>
+      <div className="md:hidden grid grid-cols-1 gap-10 pb-10 relative z-30 items-center justify-center">
+        <BankCard
+          side="center"
+          title="Mừng cưới đến chú rể"
+          bankName="Ngân hàng A"
+          accountOwner="Chú rể"
+          accountNumber="123456789"
+        />
+        <BankCard
+          side="center"
+          title="Mừng cưới đến cô dâu"
+          bankName="Ngân hàng B"
+          accountOwner="Cô dâu"
+          accountNumber="987654321"
+        />
       </div>
     </div>
   );

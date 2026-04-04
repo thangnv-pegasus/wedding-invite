@@ -58,7 +58,7 @@ const ICON_AREA_HEIGHT = 132; // px (icon 88px + 24px gap)
 
 function EventCard({ event }: { event: EventItem }) {
   return (
-    <div className="flex-1 flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
       {/* Icon */}
       <div className="w-22 h-22 mb-6 flex items-end justify-center relative">
         <Image
@@ -70,7 +70,7 @@ function EventCard({ event }: { event: EventItem }) {
       </div>
 
       {/* Name badge — sits ON the line (rendered above via z-10) */}
-      <div className="relative z-10 bg-[#a12f0c] text-white font-family-prata text-sm font-semibold uppercase tracking-widest px-12 py-3.5 rounded-full shadow-md cursor-default select-none whitespace-nowrap">
+      <div className="relative z-10 bg-[#a12f0c] text-white font-family-prata text-sm font-semibold uppercase tracking-widest md:px-12 md:py-3.5 px-10 py-2 rounded-full shadow-md cursor-default select-none whitespace-nowrap">
         {event.name}
       </div>
 
@@ -136,16 +136,16 @@ export default function EventRoadmap() {
 
       <section className="max-w-[1100px] w-full mx-auto px-6 flex flex-col items-center">
         {/* Title */}
-        <h2 className="font-family-pinyon-script text-7xl text-[#a12f0c] text-center mb-14 leading-tight">
+        <h2 className="font-family-pinyon-script text-6xl md:text-7xl text-[#a12f0c] text-center md:mb-14 mb-10 leading-tight">
           Sự kiện
         </h2>
 
         {/* Timeline wrapper — line runs through badge centers */}
-        <div className="relative flex w-full">
+        <div className="relative grid md:grid-cols-3 grid-cols-1 gap-y-10 md:gap-y-0 w-full">
           {/* Continuous horizontal line through badge centers */}
           {/* top = icon area height (88px h + 24px mb) + half badge height (~22px) ≈ 134px */}
           <div
-            className="absolute left-0 right-0 h-[2px] bg-[#a12f0c]"
+            className="absolute left-0 right-0 h-[2px] bg-[#a12f0c] md:block hidden"
             style={{ top: `${ICON_AREA_HEIGHT}px` }}
           />
 

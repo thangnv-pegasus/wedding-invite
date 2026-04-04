@@ -125,7 +125,7 @@ export default function Messages() {
 
       <section className="max-w-[680px] w-full mx-auto px-6 flex flex-col items-center">
         {/* Title */}
-        <h2 className="font-family-pinyon-script text-7xl text-[#a12f0c] text-center mb-10 leading-tight">
+        <h2 className="font-family-pinyon-script text-6xl md:text-7xl text-[#a12f0c] text-center mb-10 leading-tight">
           Sổ lưu bút
         </h2>
 

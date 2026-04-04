@@ -23,7 +23,7 @@ function MilestoneCard({
   year,
 }: MilestoneCardProps) {
   return (
-    <div className="flex flex-col items-center bg-white rounded-b-2xl rounded-t-full overflow-visible w-[340px] shadow-md">
+    <div className="flex flex-col items-center bg-white rounded-b-2xl rounded-t-full overflow-visible w-full shadow-md">
       {/* Arch photo with flower */}
       <div className="relative w-full">
         {/* Arch image */}
@@ -110,12 +110,12 @@ export default function JourneyMoment() {
   return (
     <div className="bg-white py-20 px-4">
       {/* Title */}
-      <h2 className="font-family-pinyon-script text-7xl text-[#a12f0c] text-center mb-16 leading-tight">
+      <h2 className="font-family-pinyon-script text-6xl md:text-7xl text-[#a12f0c] text-center mb-16 leading-tight">
         Cột mốc
       </h2>
 
       {/* Cards */}
-      <div className="flex justify-center items-start gap-8 max-w-330 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-330 mx-auto px-20 md:p-0">
         {MILESTONES.map((milestone, idx) => (
           <MilestoneCard key={idx} {...milestone} />
         ))}
