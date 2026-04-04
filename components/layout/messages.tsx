@@ -130,7 +130,11 @@ export default function Messages() {
         </h2>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="w-full flex flex-col gap-5">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full flex flex-col gap-5"
+          id="messages-form"
+        >
           {/* Name input */}
           <div className="w-full border border-[#c8b8b0] rounded-sm">
             <input

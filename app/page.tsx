@@ -5,6 +5,7 @@ import EventRoadmap from "@/components/layout/event-roadmap";
 import Footer from "@/components/layout/footer";
 import GiveMoney from "@/components/layout/give-money";
 import Header from "@/components/layout/header";
+import InvitationButtons from "@/components/layout/invitation-buttons";
 import JourneyMoment from "@/components/layout/journey-moment";
 import Messages from "@/components/layout/messages";
 import PhotoGallery from "@/components/layout/photo-gallery";
@@ -16,8 +17,8 @@ export default function Home() {
       <Header />
       <main className="pt-16">
         <Banner />
-        <div className="text-center py-20">
-          <p className="font-family-pinyon-script text-5xl text-slate-600 font-medium mb-5">
+        <div className="text-center py-20 px-4">
+          <p className="font-family-pinyon-script text-5xl text-neutral-600 font-medium mb-5">
             Trân trọng kính mời
           </p>
           <p className="text-base my-4 font-normal text-[#5d5d5d]">
@@ -26,19 +27,7 @@ export default function Home() {
           </p>
         </div>
         <Timer />
-        <div className="py-20">
-          <p className="text-center text-base mb-5 font-light text-[#5d5d5d]">
-            Sự hiện diện của bạn là niềm vinh dự của chúng tôi!
-          </p>
-          <div className="flex justify-center items-center gap-6 pt-5 text-lg">
-            <button className="px-12 py-5 rounded-full bg-[#a12f0c] cursor-pointer text-white text-sm font-semibold uppercase tracking-widest hover:bg-[#a03318] transition-colors duration-200 shadow-md">
-              Gửi lời chúc
-            </button>
-            <button className="px-12 py-5 rounded-full bg-[#f4dbce] cursor-pointer text-[#a12f0c] text-sm font-semibold uppercase tracking-widest hover:bg-[#eecabb] transition-colors duration-200 shadow-sm">
-              Xác nhận tham dự
-            </button>
-          </div>
-        </div>
+        <InvitationButtons />
         <AvatarCouple />
         <PhotoGallery />
         <AboutStory />

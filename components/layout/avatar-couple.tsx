@@ -6,14 +6,14 @@ import flowerBottomRightAvatar from "@/assets/images/flower-right-bot-avatar.png
 export default function AvatarCouple() {
   return (
     <div className="min-h-225 bg-[#fbf7f5] relative">
-      <p className="absolute left-0 top-50 -translate-x-2/5 text-[110px] font-family-prata text-[#f4dbce] rotate-90 tracking-wider select-none">
+      <p className="absolute left-0 top-50 -translate-x-2/5 md:text-[110px] text-6xl font-family-prata text-[#f4dbce] rotate-90 tracking-wider select-none">
         GROOM
       </p>
-      <p className="absolute right-0 bottom-50 translate-x-2/5 text-[110px] font-family-prata text-[#f4dbce] rotate-270 tracking-wider select-none">
+      <p className="absolute right-0 bottom-50 translate-x-2/5 md:text-[110px] text-6xl font-family-prata text-[#f4dbce] rotate-270 tracking-wider select-none">
         BRIDE
       </p>
-      <section className="w-330 mx-auto py-20">
-        <div className="flex justify-center items-center gap-10 px-30">
+      <section className="max-w-330 mx-auto py-20">
+        <div className="flex justify-center items-center gap-10 px-30 flex-col md:flex-row">
           <div className="flex-1">
             <div className="w-full h-auto relative rounded-t-full">
               <Image

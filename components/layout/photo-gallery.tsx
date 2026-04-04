@@ -89,7 +89,9 @@ export default function PhotoGallery() {
     visibleCount + LOAD_MORE_COUNT,
   );
 
-  const slides = ALL_PHOTOS.map((photo) => ({ src: typeof photo === "string" ? photo : photo.src }));
+  const slides = ALL_PHOTOS.map((photo) => ({
+    src: typeof photo === "string" ? photo : photo.src,
+  }));
 
   const handleLoadMore = () => {
     setAnimateFrom(visibleCount);
@@ -111,7 +113,7 @@ export default function PhotoGallery() {
         }
       `}</style>
       {/* Columns */}
-      <div className="max-w-5xl mx-auto columns-3 gap-3">
+      <div className="max-w-5xl mx-auto md:columns-3 columns-2 gap-3">
         {visiblePhotos.map((src, idx) => {
           const isNew = idx >= animateFrom;
           const delay = isNew ? (idx - animateFrom) * 80 : 0;
@@ -157,7 +159,7 @@ export default function PhotoGallery() {
         <div className="flex justify-center mt-10">
           <button
             onClick={handleLoadMore}
-            className="px-10 py-4 rounded-full border border-[#a12f0c] text-[#a12f0c] text-sm font-semibold uppercase tracking-widest hover:bg-[#a12f0c] hover:text-white transition-colors duration-200"
+            className="px-10 py-4 cursor-pointer rounded-full border border-[#a12f0c] text-[#a12f0c] text-sm font-semibold uppercase tracking-widest hover:bg-[#a12f0c] hover:text-white transition-colors duration-200"
           >
             Xem thêm
           </button>
