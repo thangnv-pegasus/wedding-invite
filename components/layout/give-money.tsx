@@ -2,6 +2,8 @@ import Image from "next/image";
 import couplePhoto from "@/assets/photos/DTA00001.jpg";
 import flowerLeft from "@/assets/images/flower-bottom-left-corner.png";
 import flowerRight from "@/assets/images/flower-bottom-right-corner.png";
+import qrHusband from "@/assets/qr/qr-husband.jpg";
+import qrWife from "@/assets/qr/qr-wife.jpg";
 
 interface BankCardProps {
   side: "left" | "right" | "center";
@@ -9,6 +11,7 @@ interface BankCardProps {
   bankName: string;
   accountOwner: string;
   accountNumber: string;
+  qrImage: any;
 }
 
 function BankCard({
@@ -17,13 +20,14 @@ function BankCard({
   bankName,
   accountOwner,
   accountNumber,
+  qrImage,
 }: BankCardProps) {
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${accountNumber}&color=000000&bgcolor=ffffff`;
 
   const qrImg = (
     <div className="w-[110px] h-[110px] border border-[#c8b8b0] rounded-sm overflow-hidden shrink-0 relative">
       <Image
-        src={qrUrl}
+        src={qrImage}
         alt={`QR ${accountOwner}`}
         fill
         className="object-cover"
@@ -121,6 +125,7 @@ export default function GiveMoney() {
             bankName="Ngân hàng A"
             accountOwner="Chú rể"
             accountNumber="123456789"
+            qrImage={qrHusband}
           />
         </div>
 
@@ -143,6 +148,7 @@ export default function GiveMoney() {
             bankName="Ngân hàng B"
             accountOwner="Cô dâu"
             accountNumber="987654321"
+            qrImage={qrWife}
           />
         </div>
       </div>
@@ -150,16 +156,18 @@ export default function GiveMoney() {
         <BankCard
           side="center"
           title="Mừng cưới đến chú rể"
-          bankName="Ngân hàng A"
-          accountOwner="Chú rể"
-          accountNumber="123456789"
+          bankName="Techcombank"
+          accountOwner="Nguyễn Ngọc Anh"
+          accountNumber="88888824092003"
+          qrImage={qrHusband}
         />
         <BankCard
           side="center"
           title="Mừng cưới đến cô dâu"
-          bankName="Ngân hàng B"
-          accountOwner="Cô dâu"
-          accountNumber="987654321"
+          bankName="MB Bank"
+          accountOwner="Nguyễn Mai Phương"
+          accountNumber="0969054526"
+          qrImage={qrWife}
         />
       </div>
     </div>

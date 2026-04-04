@@ -31,7 +31,7 @@ export default function AvatarCouple() {
               </div>
             </div>
             <div className="text-center mt-10">
-              <p className="text-2xl font-family-prata font-light text-gray-500">
+              <p className="text-2xl font-family-prata font-light text-neutral-600">
                 Chú rể
               </p>
               <p className="font-family-pinyon-script text-6xl md:text-7xl mt-5 text-[#a12f0c]  ">
@@ -56,7 +56,7 @@ export default function AvatarCouple() {
               </div>
             </div>
             <div className="text-center mt-10">
-              <p className="text-2xl font-family-prata font-light text-gray-500">
+              <p className="text-2xl font-family-prata font-light text-neutral-600">
                 Cô dâu
               </p>
               <p className="font-family-pinyon-script text-6xl md:text-7xl mt-5 text-[#a12f0c]  ">

@@ -78,7 +78,7 @@ const MILESTONES = [
     photo: photo1,
     title: "Lần đầu gặp nhau",
     description:
-      "Khi lần đầu phúc và sự hiện diện của bạn trong ngày đặc biệt này chưng lại niềm vui và ý nghĩa với chúng tôi. Hãy cùng chúng tôi tìm không gian này, không niệt và sự tìm lại trong ngày hạnh phúc nhất này!",
+      "Lần đầu gặp nhau Lần đầu gặp là kiểu... cũng chẳng có gì đặc biệt lắm, chỉ là hai người xa lạ nói chuyện vài câu. Thế mà không hiểu sao lại nhớ nhau lâu hơn bình thường một chút.",
     day: "18",
     month: "09",
     year: "2023",
@@ -88,7 +88,7 @@ const MILESTONES = [
     photo: photo2,
     title: "Chuyến đi đầu tiên",
     description:
-      "Khi lần đầu phúc và sự hiện diện của bạn trong ngày đặc biệt này chưng lại niềm vui và ý nghĩa với chúng tôi. Hãy cùng chúng tôi tìm không gian này, không niệt và sự tìm lại trong ngày hạnh phúc nhất này!",
+      "Chuyến đi đầu tiên Chuyến đi đầu tiên cùng nhau, mọi thứ đều mới nhưng lại thấy rất thoải mái. Không cần cố gắng gì nhiều, chỉ cần đi cùng nhau là đủ vui rồi.",
     day: "18",
     month: "09",
     year: "2024",
@@ -98,7 +98,7 @@ const MILESTONES = [
     photo: photo3,
     title: "Hẹn ước trọn đời",
     description:
-      "Khi lần đầu phúc và sự hiện diện của bạn trong ngày đặc biệt này chưng lại niềm vui và ý nghĩa với chúng tôi. Hãy cùng chúng tôi tìm không gian này, không niệt và sự tìm lại trong ngày hạnh phúc nhất này!",
+      "Hẹn ước trọn đời Đi với nhau một đoạn đủ dài để hiểu: Ở cạnh nhau là điều mình muốn, không phải vì lý do gì lớn lao, chỉ là đơn giản... hợp nhau và không muốn mất nhau.",
     day: "18",
     month: "09",
     year: "2025",
