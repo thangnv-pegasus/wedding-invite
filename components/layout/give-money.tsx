@@ -86,7 +86,7 @@ function BankCard({
 
 export default function GiveMoney() {
   return (
-    <div className="relative overflow-hidden p-4">
+    <div className="relative overflow-hidden">
       {/* ── Split background ── */}
       <div className="absolute inset-0 flex flex-col pointer-events-none">
         <div className="h-1/2 bg-[#fbf7f5]" />
@@ -125,7 +125,7 @@ export default function GiveMoney() {
         </div>
 
         {/* Center — Arch couple photo */}
-        <div className="shrink-0">
+        <div className="shrink-0 p-4">
           <div className="w-[400px] h-auto border-2 border-[#a12f0c] rounded-t-full overflow-hidden shadow-lg">
             <Image
               src={couplePhoto}
