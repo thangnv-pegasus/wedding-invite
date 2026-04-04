@@ -136,6 +136,7 @@ export default function PhotoGallery() {
                 src={src}
                 alt={`Ảnh cưới ${idx + 1}`}
                 fetchPriority="high"
+                priority
                 loading="eager"
                 className="w-full h-auto block transition-transform duration-300 group-hover:scale-105"
               />
