@@ -135,7 +135,8 @@ export default function PhotoGallery() {
               <Image
                 src={src}
                 alt={`Ảnh cưới ${idx + 1}`}
-                loading={idx < INITIAL_COUNT ? "eager" : "lazy"}
+                fetchPriority="high"
+                loading="eager"
                 className="w-full h-auto block transition-transform duration-300 group-hover:scale-105"
               />
             </div>
