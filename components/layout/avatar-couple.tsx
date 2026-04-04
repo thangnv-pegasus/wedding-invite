@@ -21,7 +21,7 @@ export default function AvatarCouple() {
                 alt="wife"
                 className="w-full h-auto object-cover object-center rounded-t-full"
               />
-              <div className="absolute w-55 h-55 bottom-0 left-0 translate-y-1/2 -translate-x-1/2">
+              <div className="absolute w-30 h-30 md:w-55 md:h-55 bottom-0 left-0 translate-y-1/2 -translate-x-1/2">
                 <Image
                   src={flowerBottomAvatar}
                   alt="flower"
@@ -46,7 +46,7 @@ export default function AvatarCouple() {
                 alt="wife"
                 className="w-full h-auto object-cover object-center rounded-t-full"
               />
-              <div className="absolute w-55 h-55 bottom-0 right-0 translate-y-1/2 translate-x-1/2">
+              <div className="absolute w-30 h-30 md:w-55 md:h-55 bottom-0 right-0 translate-y-1/2 translate-x-1/2">
                 <Image
                   src={flowerBottomRightAvatar}
                   alt="flower"

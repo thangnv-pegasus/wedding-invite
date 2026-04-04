@@ -115,7 +115,7 @@ export default function JourneyMoment() {
       </h2>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-330 mx-auto px-20 md:p-0">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-330 mx-auto md:p-0">
         {MILESTONES.map((milestone, idx) => (
           <MilestoneCard key={idx} {...milestone} />
         ))}

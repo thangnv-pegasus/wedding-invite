@@ -86,7 +86,7 @@ function BankCard({
 
 export default function GiveMoney() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden p-4">
       {/* ── Split background ── */}
       <div className="absolute inset-0 flex flex-col pointer-events-none">
         <div className="h-1/2 bg-[#fbf7f5]" />
