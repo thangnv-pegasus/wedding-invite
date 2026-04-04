@@ -1,0 +1,42 @@
+// ─── Sample wishes ────────────────────────────────────────────────────────────
+export const SAMPLE_WISHES = [
+  "Chúc mừng hạnh phúc! Chúc hai bạn trăm năm hạnh phúc!",
+  "Chúc mừng ngày trọng đại tới hai bạn. Hạnh phúc bền lâu và trọn vẹn nhé!",
+  "Chúc mừng hạnh phúc hai bạn. Chúc hai bạn bên nhau đầu bạc răng long, sớm có thiên thần nhỏ nhé!",
+  "Chúc đôi uyên ương mãi mãi yêu thương, gia đình hạnh phúc và viên mãn!",
+  "Xin gửi đến cô dâu và chú rể những lời chúc tốt đẹp nhất. Chúc hai bạn hạnh phúc dài lâu!",
+];
+
+// ─── Emojis ────────────────────────────────────────────────────────────────────
+export const EMOJIS = [
+  "❤️",
+  "💕",
+  "💖",
+  "💗",
+  "💓",
+  "💞",
+  "💝",
+  "💘",
+  "😍",
+  "🥰",
+  "😘",
+  "😻",
+  "🌹",
+  "💐",
+  "🌸",
+  "🌺",
+  "✨",
+  "🎊",
+  "🎉",
+  "🎁",
+  "🥂",
+  "🍾",
+  "💒",
+  "👰",
+  "🤵",
+  "💍",
+  "🫶",
+  "🙏",
+  "😊",
+  "🥹",
+];
