@@ -1,5 +1,5 @@
 import Image from "next/image";
-import couplePhoto from "@/assets/photos/DTA00001.jpg";
+import couplePhoto from "@/assets/photos/DTA00487.jpg";
 import flowerLeft from "@/assets/images/flower-bottom-left-corner.png";
 import flowerRight from "@/assets/images/flower-bottom-right-corner.png";
 import qrHusband from "@/assets/qr/qr-husband.jpg";

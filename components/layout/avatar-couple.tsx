@@ -1,5 +1,6 @@
 import Image from "next/image";
-import wifeAvatar from "@/assets/avatars/wife-avatar.jpg";
+import wifeAvatar from "@/assets/photos/wife-avatar2.jpg";
+import husbandAvatar from "@/assets/photos/husband2.jpg";
 import flowerBottomAvatar from "@/assets/images/flower-left-bot-avatar.png";
 import flowerBottomRightAvatar from "@/assets/images/flower-right-bot-avatar.png";
 
@@ -32,20 +33,21 @@ export default function AvatarCouple() {
             </div>
             <div className="text-center mt-10">
               <p className="text-2xl font-family-prata font-light text-neutral-600">
-                Chú rể
+                Cô dâu
               </p>
               <p className="font-family-pinyon-script text-6xl md:text-7xl mt-5 text-[#a12f0c]  ">
-                Ngọc Anh
+                Mai Phương
               </p>
             </div>
           </div>
           <div className="flex-1">
             <div className="w-full h-auto relative rounded-t-full">
               <Image
-                src={wifeAvatar}
+                src={husbandAvatar}
                 alt="wife"
                 className="w-full h-auto object-cover object-center rounded-t-full"
               />
+
               <div className="absolute w-30 h-30 md:w-55 md:h-55 bottom-0 right-0 translate-y-1/2 translate-x-1/2">
                 <Image
                   src={flowerBottomRightAvatar}
@@ -57,10 +59,10 @@ export default function AvatarCouple() {
             </div>
             <div className="text-center mt-10">
               <p className="text-2xl font-family-prata font-light text-neutral-600">
-                Cô dâu
+                Chú rể
               </p>
               <p className="font-family-pinyon-script text-6xl md:text-7xl mt-5 text-[#a12f0c]  ">
-                Mai Phương
+                Ngọc Anh
               </p>
             </div>
           </div>

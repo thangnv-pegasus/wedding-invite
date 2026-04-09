@@ -1,6 +1,6 @@
 import Image from "next/image";
 import flowerCorner from "@/assets/flower-corner.png";
-import bannerBig from "@/assets/images/banner-big.jpg";
+import bannerBig from "@/assets/photos/DTA00869.jpg";
 import bannerSmall from "@/assets/images/banner-small.jpg";
 import flower from "@/assets/flower.png";
 
@@ -32,7 +32,7 @@ export default function Banner() {
             <div className="text-[52px] leading-tight">Mai Phương</div>
           </div>
           <div className="text-[#F4DBCE] text-[42px] font-medium tracking-widest mt-2">
-            22 | 11 | 2024
+            12 | 04 | 2026
           </div>
         </div>
 
@@ -73,7 +73,7 @@ export default function Banner() {
             </div>
           </div>
           <div className="text-[#F4DBCE] text-[80px] font-medium">
-            22 | 11 | 2024
+            12 | 04 | 2026
           </div>
         </div>
         <div>

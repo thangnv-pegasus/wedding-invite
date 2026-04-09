@@ -1,7 +1,7 @@
 import Image from "next/image";
 import photo1 from "@/assets/photos/DTA00069.jpg";
 import photo2 from "@/assets/photos/DTA00196.jpg";
-import photo3 from "@/assets/photos/DTA00309.jpg";
+import photo3 from "@/assets/photos/DTA00339.jpg";
 import flowerLeft from "@/assets/images/flower-left-bot-avatar.png";
 
 interface MilestoneCardProps {
@@ -27,7 +27,7 @@ function MilestoneCard({
       {/* Arch photo with flower */}
       <div className="relative w-full">
         {/* Arch image */}
-        <div className="w-full h-[280px] rounded-t-full overflow-hidden relative">
+        <div className="w-full h-100 rounded-t-full overflow-hidden relative">
           <Image
             src={photo}
             alt={title}
@@ -56,7 +56,7 @@ function MilestoneCard({
         </h3>
 
         {/* Description */}
-        <p className="text-base text-[#7a6a60] leading-relaxed font-family-pinyon-script">
+        <p className="text-base text-neutral-800 leading-relaxed font-family-pinyon-script">
           {description}
         </p>
 
@@ -75,7 +75,7 @@ function MilestoneCard({
 
 const MILESTONES = [
   {
-    photo: photo1,
+    photo: photo2,
     title: "Lần đầu gặp nhau",
     description:
       "Lần đầu gặp nhau Lần đầu gặp là kiểu... cũng chẳng có gì đặc biệt lắm, chỉ là hai người xa lạ nói chuyện vài câu. Thế mà không hiểu sao lại nhớ nhau lâu hơn bình thường một chút.",
@@ -85,7 +85,7 @@ const MILESTONES = [
     flowerSide: "left" as const,
   },
   {
-    photo: photo2,
+    photo: photo1,
     title: "Chuyến đi đầu tiên",
     description:
       "Chuyến đi đầu tiên Chuyến đi đầu tiên cùng nhau, mọi thứ đều mới nhưng lại thấy rất thoải mái. Không cần cố gắng gì nhiều, chỉ cần đi cùng nhau là đủ vui rồi.",

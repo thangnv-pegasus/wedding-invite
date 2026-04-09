@@ -20,35 +20,36 @@ interface EventItem {
 const EVENTS: EventItem[] = [
   {
     icon: eventIcon1,
-    name: "Ăn Hỏi",
-    time: "10:00 AM",
+    name: "Lễ Ăn Hỏi",
+    time: "08:00",
     day: "20",
-    month: "7",
-    year: "2024",
-    address: "45 Nguyễn Khoái, Hai Bà Trưng, Hà Nội",
-    mapUrl: "https://maps.google.com/?q=45+Nguyễn+Khoái,+Hai+Bà+Trưng,+Hà+Nội",
+    month: "03",
+    year: "2026",
+    address: "Tổ chức ăn",
+    mapUrl: "#",
     calendarUrl: "#",
   },
   {
     icon: eventIcon2,
-    name: "Đón Dâu",
-    time: "10:00 AM",
-    day: "20",
-    month: "7",
-    year: "2024",
-    address: "45 Nguyễn Khoái, Hai Bà Trưng, Hà Nội",
-    mapUrl: "https://maps.google.com/?q=45+Nguyễn+Khoái,+Hai+Bà+Trưng,+Hà+Nội",
+    name: "Xuất Phát",
+    time: "09:15",
+    day: "12",
+    month: "04",
+    year: "2026",
+    address: "Dự kiến xuất phát",
+    mapUrl:
+      "https://maps.google.com/?q=Thôn+Kinh+Nậu,+xã+Bắc+Đông+Quan,+tỉnh+Hưng+Yên",
     calendarUrl: "#",
   },
   {
     icon: eventIcon3,
-    name: "Tiệc Cưới",
-    time: "10:00 AM",
-    day: "20",
-    month: "7",
-    year: "2024",
-    address: "45 Nguyễn Khoái, Hai Bà Trưng, Hà Nội",
-    mapUrl: "https://maps.google.com/?q=45+Nguyễn+Khoái,+Hai+Bà+Trưng,+Hà+Nội",
+    name: "Lễ Cưới",
+    time: "10:00",
+    day: "12",
+    month: "04",
+    year: "2026",
+    address: "Có mặt tại nhà gái & tiến hành lễ cưới",
+    mapUrl: "https://maps.app.goo.gl/S9FzX9cnusRMDnVi6",
     calendarUrl: "#",
   },
 ];
@@ -92,14 +93,16 @@ function EventCard({ event }: { event: EventItem }) {
 
       {/* Action buttons */}
       <div className="flex items-center gap-3 mt-4">
-        <a
-          href={event.mapUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-5 py-2 bg-[#a12f0c] text-white text-xs font-bold uppercase tracking-widest rounded-md hover:bg-[#8a2509] transition-colors duration-200 shadow-sm"
-        >
-          Chỉ đường
-        </a>
+        {event.mapUrl !== "#" && (
+          <a
+            href={event.mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 bg-[#a12f0c] text-white text-xs font-bold uppercase tracking-widest rounded-md hover:bg-[#8a2509] transition-colors duration-200 shadow-sm"
+          >
+            Chỉ đường
+          </a>
+        )}
         <a
           href={event.calendarUrl}
           className="px-5 py-2 border border-[#d4a090] text-[#a12f0c] bg-[#fbf7f5] text-xs font-bold uppercase tracking-widest rounded-md hover:bg-[#f4dbce] transition-colors duration-200"
@@ -153,6 +156,42 @@ export default function EventRoadmap() {
             <EventCard key={idx} event={event} />
           ))}
         </div>
+
+        {/* Cập nhật địa điểm rõ ràng */}
+        {/* <div className="mt-20 w-full flex flex-col items-center">
+          <h3 className="font-family-prata text-2xl text-[#a12f0c] mb-2 text-center">
+            Nhà Gái
+          </h3>
+          <p className="font-family-prata text-lg text-[#5a4a42] mb-8 text-center max-w-md">
+            Thôn Kinh Nậu, xã Bắc Đông Quan, tỉnh Hưng Yên
+          </p>
+          
+          <div className="w-full max-w-[800px] h-[400px] rounded-2xl overflow-hidden shadow-lg border-2 border-[#f4dbce]">
+            <iframe 
+              src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Thôn%20Kinh%20Nậu,%20xã%20Bắc%20Đông%20Quan,%20tỉnh%20Hưng%20Yên+(Nhà%20Gái)&t=&z=14&ie=UTF8&iwloc=B&output=embed" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div className="mt-6 flex gap-4">
+             <a
+              href="https://maps.google.com/?q=Thôn+Kinh+Nậu,+xã+Bắc+Đông+Quan,+tỉnh+Hưng+Yên"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-[#a12f0c] text-white text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#8a2509] transition-all duration-300 shadow-md flex items-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              Mở Google Maps
+            </a>
+          </div>
+        </div> */}
       </section>
     </div>
   );

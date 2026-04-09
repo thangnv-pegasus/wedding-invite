@@ -1,6 +1,12 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import {
+  ColumnsPhotoAlbum,
+  type RenderImageContext,
+  type RenderImageProps,
+} from "react-photo-album";
+import "react-photo-album/columns.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
@@ -38,135 +44,107 @@ import photo_DTA00869 from "@/assets/photos/DTA00869.jpg";
 import photo_DTA09925 from "@/assets/photos/DTA09925.jpg";
 import photo_DTA09954 from "@/assets/photos/DTA09954.jpg";
 
-const ALL_PHOTOS = [
-  photo_2,
-  photo_3,
-  photo_DTA00001,
-  photo_DTA00069,
-  photo_DTA00090,
-  photo_DTA00196,
-  photo_DTA00286,
-  photo_DTA00309,
-  photo_DTA00339,
-  photo_DTA00376,
-  photo_DTA00394,
-  photo_DTA00420,
-  photo_DTA00487,
-  photo_DTA00516,
-  photo_DTA00524,
-  photo_DTA00534,
-  photo_DTA00564,
-  photo_DTA00573,
-  photo_DTA00581,
-  photo_DTA00586,
-  photo_DTA00593,
-  photo_DTA00605,
-  photo_DTA00632,
-  photo_DTA00661,
-  photo_DTA00687,
-  photo_DTA00707,
-  photo_DTA00817,
-  photo_DTA00825,
-  photo_DTA00835,
-  photo_DTA00869,
-  photo_DTA09925,
-  photo_DTA09954,
-];
+// StaticImageData có sẵn { src, width, height, blurDataURL }
+// — đúng format react-photo-album cần, chỉ cần thêm alt
+const ALBUM_PHOTOS = [
+  photo_2, photo_3, photo_DTA00001, photo_DTA00069, photo_DTA00090,
+  photo_DTA00196, photo_DTA00286, photo_DTA00309, photo_DTA00339,
+  photo_DTA00376, photo_DTA00394, photo_DTA00420, photo_DTA00487,
+  photo_DTA00516, photo_DTA00524, photo_DTA00534, photo_DTA00564,
+  photo_DTA00573, photo_DTA00581, photo_DTA00586, photo_DTA00593,
+  photo_DTA00605, photo_DTA00632, photo_DTA00661, photo_DTA00687,
+  photo_DTA00707, photo_DTA00817, photo_DTA00825, photo_DTA00835,
+  photo_DTA00869, photo_DTA09925, photo_DTA09954,
+].map((photo, i) => ({ ...photo, alt: `Ảnh cưới ${i + 1}` }));
 
-const INITIAL_COUNT = 6;
-const LOAD_MORE_COUNT = 3;
+// Slides cho lightbox
+const slides = ALBUM_PHOTOS.map(({ src }) => ({ src }));
+
+
+
+// render.image: dùng Next.js Image với fill + blur placeholder
+// photo ở đây là StaticImageData (có blurDataURL) nên placeholder="blur" hoạt động đúng
+function renderNextImage(
+  { alt = "", title, sizes }: RenderImageProps,
+  { photo, width, height }: RenderImageContext,
+) {
+  return (
+    <div
+      style={{
+        width: "100%",
+        position: "relative",
+        aspectRatio: `${width} / ${height}`,
+      }}
+    >
+      <Image
+        fill
+        src={photo}
+        alt={alt}
+        title={title}
+        sizes={sizes}
+        placeholder={"blurDataURL" in photo ? "blur" : undefined}
+        className="object-cover transition-transform duration-300"
+      />
+    </div>
+  );
+}
 
 export default function PhotoGallery() {
-  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
-  const [animateFrom, setAnimateFrom] = useState(INITIAL_COUNT);
   const [lightboxIndex, setLightboxIndex] = useState(-1);
-
-  const visiblePhotos = ALL_PHOTOS.slice(0, visibleCount);
-  const hasMore = visibleCount < ALL_PHOTOS.length;
-  // Preload next batch
-  const preloadPhotos = ALL_PHOTOS.slice(
-    visibleCount,
-    visibleCount + LOAD_MORE_COUNT,
-  );
-
-  const slides = ALL_PHOTOS.map((photo) => ({
-    src: typeof photo === "string" ? photo : photo.src,
-  }));
-
-  const handleLoadMore = () => {
-    setAnimateFrom(visibleCount);
-    setVisibleCount((prev) =>
-      Math.min(prev + LOAD_MORE_COUNT, ALL_PHOTOS.length),
-    );
-  };
 
   return (
     <div className="py-20 px-4">
-      <h2 className="leading-24 text-6xl md:text-7xl mb-10 font-family-pinyon-script text-[#92400e] text-center">
-        Album ảnh cưới
-      </h2>
-      {/* Keyframe for fade-in animation */}
       <style>{`
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(16px); }
           to   { opacity: 1; transform: translateY(0); }
         }
+        /* Hover scale trên ảnh */
+        .react-photo-album--button:hover img {
+          transform: scale(1.05);
+        }
       `}</style>
-      {/* Columns */}
-      <div className="max-w-5xl mx-auto md:columns-3 columns-2 gap-3">
-        {visiblePhotos.map((src, idx) => {
-          const isNew = idx >= animateFrom;
-          const delay = isNew ? (idx - animateFrom) * 80 : 0;
-          return (
-            <div
-              key={idx}
-              className="break-inside-avoid mb-3 overflow-hidden rounded-xl cursor-pointer group shadow-lg relative"
-              style={
-                isNew
-                  ? {
-                      animation: `fadeInUp 0.4s ease forwards`,
-                      animationDelay: `${delay}ms`,
-                      opacity: 0,
-                    }
-                  : undefined
-              }
-              onClick={() => setLightboxIndex(idx)}
-            >
-              <Image
-                src={src}
-                alt={`Ảnh cưới ${idx + 1}`}
-                fetchPriority="high"
-                priority
-                loading="eager"
-                className="w-full h-auto block transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-          );
-        })}
-      </div>
+      <h2 className="leading-24 text-6xl md:text-7xl mb-10 font-family-pinyon-script text-[#92400e] text-center">
+        Album ảnh cưới
+      </h2>
 
-      {/* Preload next batch */}
-      {preloadPhotos.map((src, idx) => (
-        <Image
-          key={`preload-${idx}`}
-          src={src}
-          alt=""
-          aria-hidden
-          className="hidden"
+      <div className="max-w-5xl mx-auto">
+        <ColumnsPhotoAlbum
+          photos={ALBUM_PHOTOS}
+          columns={(w) => (w < 600 ? 2 : 3)}
+          spacing={12}
+          defaultContainerWidth={896}
+          sizes={{
+            size: "calc(min(896px, 100vw - 32px) / 3)",
+            sizes: [
+              { viewport: "(max-width: 600px)", size: "calc((100vw - 32px) / 2)" },
+            ],
+          }}
+          onClick={({ index }) => setLightboxIndex(index)}
+          render={{
+            // Next.js Image với fill + blur placeholder
+            image: renderNextImage,
+
+            // Áp dụng animation fadeInUp cho tất cả ảnh
+            button: ({ style, className, onClick, ...rest }, { index }) => {
+              const delay = index * 80;
+              return (
+                <button
+                  onClick={onClick}
+                  className={`${className ?? ""} overflow-hidden rounded-xl shadow-lg cursor-pointer`.trim()}
+                  style={{
+                    ...style,
+                    animation: `fadeInUp 0.4s ease forwards`,
+                    animationDelay: `${delay}ms`,
+                    opacity: 0,
+                  }}
+                  {...rest}
+                />
+              );
+            },
+          }}
         />
-      ))}
-
-      {/* Load more button */}
-      {hasMore && (
-        <div className="flex justify-center mt-10">
-          <button
-            onClick={handleLoadMore}
-            className="px-10 py-4 cursor-pointer rounded-full border border-[#a12f0c] text-[#a12f0c] text-sm font-semibold uppercase tracking-widest hover:bg-[#a12f0c] hover:text-white transition-colors duration-200"
-          >
-            Xem thêm
-          </button>
-        </div>
-      )}
+      </div>
 
       {/* Lightbox */}
       <Lightbox

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import bannerBig from "@/assets/images/banner-big.jpg";
+import bannerBig from "@/assets/photos/DTA00825.jpg";
 import flowerBottomRight from "@/assets/images/flower-bottom-right-corner.png";
 
 export default function AboutStory() {

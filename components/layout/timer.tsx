@@ -11,7 +11,7 @@ interface TimeLeft {
   seconds: number;
 }
 
-const WEDDING_DATE = new Date("2026-11-20T17:00:00");
+const WEDDING_DATE = new Date("2026-04-12T08:00:00");
 
 const CountDown = ({ small = false }: { small?: boolean }) => {
   const calculateTimeLeft = (): TimeLeft => {
@@ -57,8 +57,12 @@ const CountDown = ({ small = false }: { small?: boolean }) => {
       {units.map(({ label, key }, idx) => (
         <div key={key} className={`flex items-center ${gapSize}`}>
           <div className="flex flex-col items-center">
-            <div className={`${boxSize} gap-0.5 flex flex-col items-center justify-center rounded-2xl bg-[#f4dbce]`}>
-              <span className={`${numSize} font-semibold text-[#a12f0c] tabular-nums leading-none`}>
+            <div
+              className={`${boxSize} gap-0.5 flex flex-col items-center justify-center rounded-2xl bg-[#f4dbce]`}
+            >
+              <span
+                className={`${numSize} font-semibold text-[#a12f0c] tabular-nums leading-none`}
+              >
                 {String(timeLeft[key]).padStart(2, "0")}
               </span>
               <span className={`${labelSize} text-[#a12f0c] font-normal`}>
@@ -67,7 +71,9 @@ const CountDown = ({ small = false }: { small?: boolean }) => {
             </div>
           </div>
           {idx < units.length - 1 && (
-            <span className={`${colonSize} font-semibold text-[#a12f0c] select-none`}>
+            <span
+              className={`${colonSize} font-semibold text-[#a12f0c] select-none`}
+            >
               :
             </span>
           )}
@@ -82,27 +88,37 @@ export default function Timer() {
     <div className="bg-[rgb(251_247_245)] relative overflow-hidden">
       {/* Flower corners — hiện cả mobile lẫn desktop */}
       <div className="absolute top-0 left-0 w-40 h-40 lg:w-75 lg:h-75">
-        <Image src={flowerCorner} alt="flower corner" fill className="object-cover object-center" />
+        <Image
+          src={flowerCorner}
+          alt="flower corner"
+          fill
+          className="object-cover object-center"
+        />
       </div>
       <div className="absolute bottom-0 right-0 w-40 h-40 lg:w-75 lg:h-75">
-        <Image src={flowerCornerRight} alt="flower corner right" fill className="object-cover object-center" />
+        <Image
+          src={flowerCornerRight}
+          alt="flower corner right"
+          fill
+          className="object-cover object-center"
+        />
       </div>
 
       {/* ── Mobile layout ── */}
       <div className="lg:hidden flex flex-col items-center text-center px-6 py-16 gap-8">
         <p className="font-family-prata text-xl text-[#a12f0c]">
-          17:00, Thứ 6
+          08:00, Chủ Nhật
         </p>
         {/* Ngày tháng dạng số lớn như thiết kế */}
         <div className="flex items-center justify-center gap-4 font-family-prata text-[#a12f0c]">
-          <span className="text-5xl font-medium">20</span>
+          <span className="text-5xl font-medium">21</span>
           <span className="text-3xl text-[#c9a98a]">|</span>
-          <span className="text-5xl font-medium">11</span>
+          <span className="text-5xl font-medium">12</span>
           <span className="text-3xl text-[#c9a98a]">|</span>
-          <span className="text-5xl font-medium">2024</span>
+          <span className="text-5xl font-medium">2025</span>
         </div>
         <p className="font-family-prata text-base text-[#a12f0c] leading-relaxed max-w-[260px]">
-          Số 12, phố Tố Hữu, Hà Đông, Hà Nội
+          Thôn Kinh Nậu, xã Bắc Đông Quan, Hưng Yên
         </p>
         {/* Countdown nhỏ hơn cho mobile */}
         <CountDown small />
@@ -111,9 +127,9 @@ export default function Timer() {
       {/* ── Desktop layout (giữ nguyên) ── */}
       <div className="hidden lg:block h-130">
         <section className="max-w-[1320px] w-full text-4xl mx-auto font-family-prata pt-15 flex flex-col gap-20 justify-center items-center text-[#a12f0c]">
-          <p className="">17:00, Thứ 6</p>
-          <p className="tracking-[10px]">20 | 11 | 2024</p>
-          <p>Số 12, phố Tố Hữu, Hà Đông, Hà Nội</p>
+          <p className="">08:00, Chủ Nhật</p>
+          <p className="tracking-[10px]">12 | 04 | 2026</p>
+          <p>Thôn Kinh Nậu, xã Bắc Đông Quan, tỉnh Hưng Yên</p>
         </section>
         <div className="mt-10">
           <CountDown />
